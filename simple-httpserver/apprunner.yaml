@@ -4,18 +4,18 @@ build:
   commands:
     pre-build:
       - echo -n 'Running PreBuild command.' > pre-build.txt
-      - python3 --version >> pre-build.txt
+      - python --version >> pre-build.txt
     build:
       - echo -n 'Running Build command.' > build.txt
-      - python3 --version >> build.txt
+      - python --version >> build.txt
     post-build:
       - echo -n 'Running PostBuild command.' > post-build.txt
-      - python3 --version >> post-build.txt
+      - python --version >> post-build.txt
   env:
     - name: FOO
       value: "bar"
 run:
-  command: python3 application.py
+  command: python application.py
   network: 
     port: 8000
     env: PORT
